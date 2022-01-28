@@ -1,6 +1,6 @@
 package com.santos.androidchallenge.data.entity
 
-data class Song(
+data class SongEntity(
     val id: Long,
     val readable: Boolean,
     val title: String,
