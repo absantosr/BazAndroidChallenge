@@ -1,4 +1,4 @@
-package com.santos.androidchallenge.data.entity
+package com.santos.androidchallenge.domain.model
 
 data class Album(
     val id: Long,

@@ -1,8 +1,5 @@
 package com.santos.androidchallenge.domain.model
 
-import com.santos.androidchallenge.data.entity.Album
-import com.santos.androidchallenge.data.entity.Artist
-
 data class Song(
     val id: Long,
     val readable: Boolean,

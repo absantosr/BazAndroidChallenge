@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class GetSongUseCase @Inject constructor(private val songRepository: SongRepository) {
 
-    suspend operator fun invoke(): ResultType<Song, Failure> {
-        return songRepository.getSong()
+    suspend operator fun invoke(term:String): ResultType<List<Song>, Failure> {
+        return songRepository.fetchSong(term)
     }
 }

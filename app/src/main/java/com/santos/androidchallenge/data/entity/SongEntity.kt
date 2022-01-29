@@ -14,7 +14,7 @@ data class SongEntity(
     val explicit_content_cover: Int,
     val preview: String,
     val md5_image: String,
-    val artist: Artist,
-    val album: Album,
+    val artist: ArtistEntity,
+    val album: AlbumEntity,
     val type: String
 )

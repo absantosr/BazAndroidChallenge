@@ -1,6 +1,6 @@
 package com.santos.androidchallenge.data.entity
 
-data class Artist(
+data class ArtistEntity(
     val id: Long,
     val name: String,
     val link: String,

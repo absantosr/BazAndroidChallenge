@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Albert/Documents/Multiplica_Talent/AndroidChallenge/app/src/main/res/drawable/bg_border_search.xml" value="0.2315" />
         <entry key="..\:/Users/Albert/Documents/Multiplica_Talent/AndroidChallenge/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Albert/Documents/Multiplica_Talent/AndroidChallenge/app/src/main/res/layout/fragment_song.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Albert/Documents/Multiplica_Talent/AndroidChallenge/app/src/main/res/layout/item_song.xml" value="0.4" />
       </map>
     </option>
   </component>
