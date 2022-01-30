@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 interface DataSourceModule {
 
     @Binds
-    fun provideNetworkSongSource(songNetworkSourceImpl: SongNetworkSourceImpl):SongNetworkSource
+    fun provideNetworkSongSource(songNetworkSourceImpl: SongNetworkSourceImpl): SongNetworkSource
 
 }

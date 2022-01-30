@@ -29,7 +29,4 @@ class NetworkModule {
     fun provideCharactersApi(retrofit: Retrofit): SongApi =
         retrofit.create(SongApi::class.java)
 
-
-    @Provides
-    fun providesName(): String = "Albert"
 }

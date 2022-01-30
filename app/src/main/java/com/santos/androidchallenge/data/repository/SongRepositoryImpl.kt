@@ -6,7 +6,7 @@ import com.santos.androidchallenge.core.mapSuccess
 import com.santos.androidchallenge.data.datasource.interfaces.SongNetworkSource
 import com.santos.androidchallenge.data.mapper.toDomain
 import com.santos.androidchallenge.domain.model.Lyrics
-import com.santos.androidchallenge.domain.model.Song
+import com.santos.androidchallenge.domain.model.Summary
 import com.santos.androidchallenge.domain.repository.SongRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -16,14 +16,15 @@ class SongRepositoryImpl @Inject constructor(
     private val songNetworkSource: SongNetworkSource
 ) : SongRepository {
 
-    override suspend fun fetchSong(term: String): ResultType<List<Song>, Failure> =
+    override suspend fun fetchSong(term: String): ResultType<Summary, Failure> =
         withContext(Dispatchers.IO) {
             return@withContext songNetworkSource.fetchSong(term)
-                .mapSuccess { songs -> songs.map { song -> song.toDomain() } }
+                .mapSuccess { it.toDomain() }
         }
 
     override suspend fun getLyrics(artist: String, song: String): ResultType<Lyrics, Failure> =
         withContext(Dispatchers.IO) {
-            return@withContext songNetworkSource.getLyrics(artist, song).mapSuccess { it.toDomain() }
+            return@withContext songNetworkSource.getLyrics(artist, song)
+                .mapSuccess { it.toDomain() }
         }
 }

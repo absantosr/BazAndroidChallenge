@@ -4,13 +4,13 @@ import com.santos.androidchallenge.core.Failure
 import com.santos.androidchallenge.core.ResultType
 import com.santos.androidchallenge.data.datasource.interfaces.SongNetworkSource
 import com.santos.androidchallenge.data.entity.LyricsEntity
-import com.santos.androidchallenge.data.entity.SongEntity
+import com.santos.androidchallenge.data.entity.SummaryEntity
 import com.santos.androidchallenge.data.network.SongApi
 import javax.inject.Inject
 
 class SongNetworkSourceImpl @Inject constructor(private val songApi: SongApi) : SongNetworkSource {
 
-    override suspend fun fetchSong(term: String): ResultType<List<SongEntity>, Failure> {
+    override suspend fun fetchSong(term: String): ResultType<SummaryEntity, Failure> {
         val result = songApi.fetchSong(term)
         val body = result.body()
         return if (result.isSuccessful && body != null) {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,12 +23,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/ivSong"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ivNext"
             app:layout_constraintStart_toEndOf="@+id/ivSong"
-            app:layout_constraintTop_toTopOf="@id/ivSong"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Song" />
 
         <ImageView
@@ -43,7 +44,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
