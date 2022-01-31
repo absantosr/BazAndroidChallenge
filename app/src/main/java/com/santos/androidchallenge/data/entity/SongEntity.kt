@@ -5,7 +5,7 @@ data class SongEntity(
     val readable: Boolean,
     val title: String,
     val title_short: String,
-    val title_version: String,
+    val title_version: String?,
     val link: String,
     val duration: Int,
     val rank: Int,

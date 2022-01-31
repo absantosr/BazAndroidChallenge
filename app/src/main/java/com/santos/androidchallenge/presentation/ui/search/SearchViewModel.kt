@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.santos.androidchallenge.core.Failure
 import com.santos.androidchallenge.core.ResultType
 import com.santos.androidchallenge.domain.model.Summary
-import com.santos.androidchallenge.domain.usecases.GetSongUseCase
+import com.santos.androidchallenge.domain.usecases.FetchSongUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val fetchSongUseCase: GetSongUseCase) :
+class SearchViewModel @Inject constructor(private val fetchSongUseCase: FetchSongUseCase) :
     ViewModel() {
 
     private val _fetchLiveData = MutableLiveData<ResultType<Summary, Failure>>()

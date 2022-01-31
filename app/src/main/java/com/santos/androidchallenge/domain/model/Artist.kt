@@ -1,5 +1,9 @@
 package com.santos.androidchallenge.domain.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Artist(
     val id: Long,
     val name: String,
@@ -11,4 +15,4 @@ data class Artist(
     val picture_xl: String,
     val tracklist: String,
     val type: String,
-)
+):Parcelable

@@ -1,11 +1,15 @@
 package com.santos.androidchallenge.domain.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Song(
     val id: Long,
     val readable: Boolean,
     val title: String,
     val title_short: String,
-    val title_version: String,
+    val title_version: String?,
     val link: String,
     val duration: Int,
     val rank: Int,
@@ -17,4 +21,4 @@ data class Song(
     val artist: Artist,
     val album: Album,
     val type: String
-)
+) : Parcelable

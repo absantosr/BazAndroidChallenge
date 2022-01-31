@@ -11,16 +11,16 @@
         tools:layout="@layout/fragment_search"
         android:label="SearchFragment" >
         <action
-            android:id="@+id/action_searchFragment_to_songFragment"
-            app:destination="@id/songFragment" />
+            android:id="@+id/action_searchFragment_to_lyricsFragment"
+            app:destination="@id/lyricsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/songFragment"
-        android:name="com.santos.androidchallenge.presentation.ui.song.SongFragment"
-        tools:layout="@layout/fragment_song"
-        android:label="SongFragment" >
+        android:id="@+id/lyricsFragment"
+        android:name="com.santos.androidchallenge.presentation.ui.lyrics.LyricsFragment"
+        tools:layout="@layout/fragment_lyrics"
+        android:label="LyricsFragment" >
         <argument
-            android:name="lyrics"
-            app:argType="com.santos.androidchallenge.domain.model.Lyrics" />
+            android:name="song"
+            app:argType="com.santos.androidchallenge.domain.model.Song" />
     </fragment>
 </navigation>

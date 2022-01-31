@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.santos.androidchallenge.R
 import com.santos.androidchallenge.databinding.ItemSongBinding
 import com.santos.androidchallenge.domain.model.Song
 import com.santos.androidchallenge.presentation.util.setSafeOnClickListener
@@ -26,9 +27,11 @@ class SongAdapter(val onSongSelected: ((Song) -> Unit)) :
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Song) {
             with(binding) {
-                ivSong.load(item.album.cover)
+                ivSong.load(item.album.cover_medium){
+                    crossfade(true)
+                }
                 tvSongTitle.text = String.format(
-                    "%s - %s",
+                    context.getString(R.string.s_s),
                     item.artist.name,
                     item.title
                 )

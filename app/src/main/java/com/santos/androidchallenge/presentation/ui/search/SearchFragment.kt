@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.santos.androidchallenge.R
 import com.santos.androidchallenge.core.Failure
 import com.santos.androidchallenge.core.ResultType
 import com.santos.androidchallenge.databinding.FragmentSearchBinding
@@ -34,6 +36,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().title = getString(R.string.title_app)
         configureRecyclerView()
         viewModel.songLiveData.observe(viewLifecycleOwner, ::renderFetchSong)
 
@@ -55,7 +58,7 @@ class SearchFragment : Fragment() {
     private fun renderFetchSong(resource: ResultType<Summary, Failure>) {
         when (resource) {
             is ResultType.Error -> {
-                //dss
+                //Pending
             }
             is ResultType.Success -> {
                 binding.run {
@@ -73,6 +76,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun onSongSelected(song: Song) {
-        //dsd
+        findNavController().navigate(
+            SearchFragmentDirections.actionSearchFragmentToLyricsFragment(song)
+        )
     }
 }
